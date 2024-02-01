@@ -1,1 +1,1 @@
-# steryu.github.io
+# steryu
