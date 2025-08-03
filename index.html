@@ -1,122 +1,25 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | UnityGame</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">UnityGame</div>
-      </div>
-    </div>
-    <script>
-
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var warningBanner = document.querySelector("#unity-warning");
-
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
-      }
-
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/webGL unity.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/webGL unity.data.br",
-        frameworkUrl: buildUrl + "/webGL unity.framework.js.br",
-        codeUrl: buildUrl + "/webGL unity.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Steryu",
-        productName: "UnityGame",
-        productVersion: "0.1.0",
-        showBanner: unityShowBanner,
-      };
-
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-
-      loadingBar.style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                loadingBar.style.display = "none";
-                fullscreenButton.onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
-              }).catch((message) => {
-                alert(message);
-              });
-            };
-
-      document.body.appendChild(script);
-
-    </script>
-  </body>
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="Software engineer,Game developer,C++,Unity,Unreal Engine"/>
+        <meta name="description" content="Game Developer / Software Engineer"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:site" content="@AdobePortfolio"/>
+        <meta property="og:title" content="Steryu"/>
+        <meta property="og:description" content="Game Developer / Software Engineer"/>
+        <meta property="og:image" content="https://cdn.myportfolio.com/95d1f528-23cc-467b-953c-db761babd596/77c48dd1-a256-4ddf-b34c-39b17c97bc78_rwc_0x0x936x568x936.png?h=c51349234f8ff7869d69553ac1559fbd"/>
+        <link rel="icon" href="https://cdn.myportfolio.com/95d1f528-23cc-467b-953c-db761babd596/a4c07d4c-e3ee-41ef-9415-4c1426ff826d_carw_1x1x32.png?h=8664b8ea22d34036b13e3db237711720"/>
+        <link rel="stylesheet" href="/dist/css/main.css" type="text/css"/>
+        <link rel="stylesheet" href="https://cdn.myportfolio.com/95d1f528-23cc-467b-953c-db761babd596/99240e3700079e0d7c6815e9dc0d9ef41753981201.css?h=24c1377f03b2ec9c62016cdb6f3af0eb" type="text/css"/>
+        <link rel="canonical" href="https://steryu.myportfolio.com/projects"/>
+        <title>Steryu</title>
+        <script type="text/javascript" src="//use.typekit.net/ik/G6WYtB8kNoLm0B75IL_1JCe6s7hc8WtptoxC-z5nAxvfe0wgfHYEBsJzwD9oFDIDWD48ZRZRjAm8wDwuweZRZ2Sh5AJhFhwUwAZ85e9uwDw3Fh4qFcJoZRI-mkG0dW83da4XZcNC-Av0jhNlOfG0SY4zwKuh-AmaOcuoSeNkieZzde8zOcFzdPUlpWgzS1scdhUTdkoRdhXCSY4zwKuh-AmaOcuoSeNkieZzde8zOcFzdPJIZ1s0-kJIicFDdPG4fJZmIMMjMkMfH6qJyB9bMg6IJMJ7fbRxmgMMeM96MKG4fJBmIMMjgkMfH6qJn3IbMs6IJMJ7fbKOMsMgeMS6MTMgGpeaXM9.js?cb=339c9203b14c20f713c120d60f4cc133a50a3b76" async onload="
+    try {
+      window.Typekit.load();
+    } catch (e) {
+      console.warn('Typekit not loaded.');
+    }
+    "></script>
 </html>
