@@ -64,7 +64,7 @@ body {
 .scroll-indicator {
   font-size: 2rem;
   opacity: 0.7;
-  /* animation: bounce 2s infinite; */
+  animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
@@ -513,7 +513,7 @@ section {
     min-width: 0;
     width: 100%;
     max-width: 100%;
-    aspect-ratio: 1.1;
+    aspect-ratio: 1;
   }
   .projects-section {
     padding: 1rem 0.5rem;
@@ -547,7 +547,7 @@ section {
   .project-card {
     width: 100%;
     max-width: 100%;
-    aspect-ratio: 1.1;
+    aspect-ratio: 1;
   }
   .hero-title {
     font-size: 1.3rem;
