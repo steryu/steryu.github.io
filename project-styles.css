@@ -233,10 +233,15 @@
 
 .gallery-item {
   width: 100%;
+<<<<<<< HEAD
   max-width: 100%;
   height: auto;
   max-height: 600px;
   object-fit: contain;
+=======
+  object-fit: cover;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+>>>>>>> 85c60cbc0b495b32ed5b6d16c582f6d3d1f4ce52
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
