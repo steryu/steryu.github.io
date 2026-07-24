@@ -137,18 +137,18 @@ body {
 .nav-sections {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.25rem;
   text-align: center;
 }
 
 .nav-section {
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
 }
 
 .section-heading {
   font-size: 0.8rem;
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -236,6 +236,24 @@ body {
   max-width: 850px;
   margin: 0 auto;
   order: 2;
+  /* Match .nav-container top padding so first category lines up with STERYU */
+  padding-top: 2rem;
+}
+
+.category-heading {
+  grid-column: 1 / -1;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #222222;
+  margin: 2rem 0 0.75rem;
+  padding: 0 0.25rem;
+  scroll-margin-top: 1.5rem;
+}
+
+.category-heading:first-child {
+  margin-top: 0;
 }
 
 .project-card {
@@ -572,13 +590,15 @@ html {
   animation: fadeInUp 0.6s ease;
 }
 
-.project-card:nth-child(1) { animation-delay: 0.1s; }
-.project-card:nth-child(2) { animation-delay: 0.2s; }
-.project-card:nth-child(3) { animation-delay: 0.3s; }
-.project-card:nth-child(4) { animation-delay: 0.4s; }
-.project-card:nth-child(5) { animation-delay: 0.5s; }
-.project-card:nth-child(6) { animation-delay: 0.6s; }
-.project-card:nth-child(7) { animation-delay: 0.7s; }
-.project-card:nth-child(8) { animation-delay: 0.8s; }
-.project-card:nth-child(9) { animation-delay: 0.9s; }
+.projects-grid > a.project-card:nth-of-type(1) { animation-delay: 0.1s; }
+.projects-grid > a.project-card:nth-of-type(2) { animation-delay: 0.2s; }
+.projects-grid > a.project-card:nth-of-type(3) { animation-delay: 0.3s; }
+.projects-grid > a.project-card:nth-of-type(4) { animation-delay: 0.4s; }
+.projects-grid > a.project-card:nth-of-type(5) { animation-delay: 0.5s; }
+.projects-grid > a.project-card:nth-of-type(6) { animation-delay: 0.6s; }
+.projects-grid > a.project-card:nth-of-type(7) { animation-delay: 0.7s; }
+.projects-grid > a.project-card:nth-of-type(8) { animation-delay: 0.8s; }
+.projects-grid > a.project-card:nth-of-type(9) { animation-delay: 0.9s; }
+.projects-grid > a.project-card:nth-of-type(10) { animation-delay: 1.0s; }
+.projects-grid > a.project-card:nth-of-type(11) { animation-delay: 1.1s; }
 

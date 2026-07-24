@@ -245,11 +245,13 @@
 }
 
 video.gallery-item {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
-  max-height: 500px;
+  max-height: 600px;
   object-fit: contain;
-  background: #000;
+  justify-self: center;
+  background: transparent;
 }
 
 .project-logo {
@@ -363,6 +365,11 @@ video.gallery-item {
   
   .gallery-item {
     height: 250px;
+  }
+
+  video.gallery-item {
+    height: auto;
+    max-height: 500px;
   }
 }
 
